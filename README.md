@@ -43,13 +43,7 @@ The project consists of several key components:
 ### Installation
 
 1. Clone this repository
-2. Install required dependencies:
-
-   ```bash
-
-   pip install -r requirements.txt
-   ```
-
+2. Install required dependencies as present in their corresponding notebooks
 3. Run the notebooks in the following order:
    - s2_documentation_scraper.ipynb
    - data_cleaning_md_content.ipynb
@@ -72,6 +66,24 @@ Documentation Sources → Scraper → Content Cleaning → Embedding Generation 
                                                                                ↓
                                       User Interface ← Response Generation ← Hybrid Search
 ```
+
+## Deployed Cloud functions available for viewing at 
+
+```
+https://portal.singlestore.com/organizations/8bd790ef-6703-4100-85c0-bb19744acc16/functions/762d6961-9037-481b-955a-f565a2a5cf88
+```
+
+Example curl command to query the health check endpoint 
+
+```bash
+export AUTH_TOKEN=<your token>
+
+curl -X 'GET' \
+  'https://apps.aws-virginia-nb2.svc.singlestore.com:8000/functions/762d6961-9037-481b-955a-f565a2a5cf88/health' \
+  -H "Authorization: Bearer $AUTH_TOKEN" \
+  -H 'accept: application/json'
+```
+
 
 ## Future Improvements
 
